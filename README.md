@@ -1,8 +1,6 @@
 # JSONL
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/jsonl`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+JSONL is just a module for handling [JSONL](http://jsonlines.org) (JSON Lines) parsing with JSON module.
 
 ## Installation
 
@@ -22,18 +20,31 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To parse JSONL text, just pass the source to `JSONL.parse`, which transfers the processing to `JSON.parse`.
 
-## Development
+`source.jsonl`:
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+```json
+{"name": "Gilbert", "wins": [["straight", "7♣"], ["one pair", "10♥"]]}
+{"name": "Alexa", "wins": [["two pair", "4♠"], ["two pair", "9♠"]]}
+{"name": "May", "wins": []}
+{"name": "Deloise", "wins": [["three of a kind", "5♣"]]}
+```
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```ruby
+require 'jsonl'
+
+source = File.read('source.jsonl')
+
+parsed = JSONL.parse(source)
+parsed.class #=> Array
+parsed.count #=> 4
+parsed[0] #=> {"name"=>"Gilbert", "wins"=>[["straight", "7♣"], ["one pair", "10♥"]]}
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/kami-zh/jsonl. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/kami-zh/jsonl.
 
 ## License
 
