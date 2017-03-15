@@ -8,7 +8,7 @@ class JSONLTest < Minitest::Test
   end
 
   def test_parsed_class
-    assert_equal Array, @parsed.class
+    assert_instance_of Array, @parsed
   end
 
   def test_parsed_count
