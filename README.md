@@ -1,5 +1,8 @@
 # JSONL
 
+[![Gem Version](https://badge.fury.io/rb/jsonl.svg)](https://badge.fury.io/rb/jsonl)
+[![Build Status](https://travis-ci.org/kami-zh/jsonl.svg?branch=master)](https://travis-ci.org/kami-zh/jsonl)
+
 JSONL is just a module for handling [JSONL](http://jsonlines.org) (JSON Lines) parsing with JSON module.
 
 ## Installation
