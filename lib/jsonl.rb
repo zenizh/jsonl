@@ -13,8 +13,8 @@ module JSONL
   #
   # ==== Exapmles
   #
-  #    users = User.all.map(&:attributes) #=> [{"id"=>1, "name"=>"Gilbert", ...}, {"id"=>2, "name"=>"Alexa", ...}, ...]
-  #    generated = JSONL.generate(users)
+  #   users = User.all.map(&:attributes) #=> [{"id"=>1, "name"=>"Gilbert", ...}, {"id"=>2, "name"=>"Alexa", ...}, ...]
+  #   generated = JSONL.generate(users)
   #
   def generate(objs, opts = nil)
     unless objs.is_a?(Array)
@@ -37,8 +37,8 @@ module JSONL
   #
   # ==== Examples
   #
-  #    source = File.read('source.jsonl')
-  #    parsed = JSONL.parse(source)
+  #   source = File.read('source.jsonl')
+  #   parsed = JSONL.parse(source)
   #
   def parse(source, opts = {})
     parsed = []
